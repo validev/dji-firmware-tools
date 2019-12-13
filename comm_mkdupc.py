@@ -213,10 +213,10 @@ class DJICmdV1Header(LittleEndianStructure):
   sender_type = property(__get_sender_type, __set_sender_type)
 
   def __get_sender_index(self):
-        return (self.sender_info & 224) >> 4
+        return (self.sender_info & 224) >> 5
 
   def __set_sender_index(self, value):
-        self.sender_info = (self.sender_info & 31) | ((value & 7) << 4)
+        self.sender_info = (self.sender_info & 31) | ((value & 7) << 5)
 
   sender_index = property(__get_sender_index, __set_sender_index)
 
@@ -229,10 +229,10 @@ class DJICmdV1Header(LittleEndianStructure):
   receiver_type = property(__get_receiver_type, __set_receiver_type)
 
   def __get_receiver_index(self):
-        return (self.receiver_info & 224) >> 4
+        return (self.receiver_info & 224) >> 5
 
   def __set_receiver_index(self, value):
-        self.receiver_info = (self.receiver_info & 31) | ((value & 7) << 4)
+        self.receiver_info = (self.receiver_info & 31) | ((value & 7) << 5)
 
   receiver_index = property(__get_receiver_index, __set_receiver_index)
 
